@@ -50,7 +50,9 @@ submint.onclick=function(){
         category:category.value,
     };
     datapro.push(newpro)
+
     //save lockalstorge
+    
     localStorage.setItem('proudct', JSON.stringify(datapro) )
     
     cleardata()
