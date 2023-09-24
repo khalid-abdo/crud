@@ -13,6 +13,8 @@ let submint =document.getElementById('submint');
 
 //get total
 
+
+
 function gettotal(){
     if(price.value != ''){
         let result = (+price.value + +taxes.value + +ads.value)
