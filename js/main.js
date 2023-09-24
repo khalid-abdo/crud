@@ -20,8 +20,8 @@ function gettotal(){
         total.innerHTML=result;
         total.style.background='#040';
     }else{
-        total.innerHTML=''
-        total.style.background='#a00d02'
+        total.innerHTML='';
+        total.style.background='#a00d02';
     }
 
 }
