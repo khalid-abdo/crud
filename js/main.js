@@ -53,9 +53,23 @@ submint.onclick=function(){
     //save lockalstorge
     localStorage.setItem('proudct', JSON.stringify(datapro) )
     
+    cleardata()
 }
-// save to local storage
+
 //clear inputs
+
+
+function cleardata(){
+    title.value='';
+    price.value='';
+    taxes.value='';
+    ads.value='';
+    discount.value='';
+    total.innerHTML='';
+    count.value='';
+    category.value='';
+
+}
 //read 
 //count 
 // delete
