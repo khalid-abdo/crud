@@ -8,12 +8,7 @@ let count =document.getElementById('count');
 let category =document.getElementById('category');
 let submint =document.getElementById('submint');
 
-
-
-
 //get total
-
-
 
 function gettotal(){
     if(price.value != ''){
@@ -29,7 +24,6 @@ function gettotal(){
 }
 
 //creat product
-
 
 
 let datapro ;
@@ -63,7 +57,6 @@ submint.onclick=function(){
 }
 
 //clear inputs
-
 
 function cleardata(){
     title.value='';
