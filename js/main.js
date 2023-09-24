@@ -40,6 +40,8 @@ if(localStorage.proudct != null){
     datapro=[];
 }
 
+
+
 submint.onclick=function(){
     let newpro = {
         title:title.value,
