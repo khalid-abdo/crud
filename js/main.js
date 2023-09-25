@@ -52,8 +52,8 @@ submint.onclick=function(){
     //save lockalstorge
     
     localStorage.setItem('proudct', JSON.stringify(datapro) )
-    
     cleardata()
+    showdata()
 }
 
 //clear inputs
@@ -70,8 +70,40 @@ function cleardata(){
 
 }
 //read 
-//count 
+function showdata(){
+    let table ='';
+    for (let i =0 ; i< datapro.length;i++ ){
+        table += `
+        <tr>
+        <td>${i}</td>
+        <td>${datapro[i].title}</td>
+        <td>${datapro[i].price}</td>
+        <td>${datapro[i].taxes}</td>
+        <td>${datapro[i].ads}</td>
+        <td>${datapro[i].discount}</td>
+        <td>${datapro[i].count}</td>
+        <td>${datapro[i].category}</td>
+        <td><button id="update">update</button></td>
+        <td><button id="delete" onclick="deletedata(   ${i}   )">delete</button></td>
+
+    </tr>
+
+        `
+        
+    }
+    document.getElementById('tbody').innerHTML=table;
+
+
+}showdata()
+
 // delete
+function deletedata(i){
+    datapro.splice(i,1);
+    localStorage.proudct=JSON.stringify(datapro)
+    showdata()
+}
+//count 
 // update 
 //search 
 // clean data
+ 
