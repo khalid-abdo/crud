@@ -92,6 +92,13 @@ function showdata(){
         
     }
     document.getElementById('tbody').innerHTML=table;
+    let btndelete =document.getElementById('deleteall')
+    if(datapro.length > 0){
+        btndelete.innerHTML=`<button onclick="alldelete()" >deleteALL</button>`;
+    }
+    else{
+        btndelete.innerHTML='';
+    }
 
 
 }showdata()
@@ -100,6 +107,12 @@ function showdata(){
 function deletedata(i){
     datapro.splice(i,1);
     localStorage.proudct=JSON.stringify(datapro)
+    showdata()
+}
+
+function alldelete(){
+    localStorage.clear()
+    datapro.splice(0)
     showdata()
 }
 //count 
