@@ -82,7 +82,9 @@ function cleardata(){
     category.value='';
 
 }
+
 //read 
+
 function showdata(){
     let table ='';
     for (let i =0 ; i< datapro.length;i++ ){
@@ -117,11 +119,14 @@ function showdata(){
 }showdata()
 
 // delete
+
 function deletedata(i){
     datapro.splice(i,1);
     localStorage.proudct=JSON.stringify(datapro)
     showdata()
 }
+
+//delete all
 
 function alldelete(){
     localStorage.clear()
