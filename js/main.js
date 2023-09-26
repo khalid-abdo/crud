@@ -47,7 +47,20 @@ submint.onclick=function(){
         count:count.value,
         category:category.value,
     };
-    datapro.push(newpro)
+//count 
+    if(newpro.count>1){
+        for(let i =0 ;i<newpro.count;i++){
+            datapro.push(newpro)
+
+        } } 
+        else{
+            datapro.push(newpro)
+
+
+        }
+        
+   
+
 
     //save lockalstorge
     
@@ -94,7 +107,7 @@ function showdata(){
     document.getElementById('tbody').innerHTML=table;
     let btndelete =document.getElementById('deleteall')
     if(datapro.length > 0){
-        btndelete.innerHTML=`<button onclick="alldelete()" >deleteALL</button>`;
+        btndelete.innerHTML=`<button onclick="alldelete()" >deleteALL(${datapro.length})</button>`;
     }
     else{
         btndelete.innerHTML='';
@@ -116,6 +129,7 @@ function alldelete(){
     showdata()
 }
 //count 
+
 // update 
 //search 
 // clean data
