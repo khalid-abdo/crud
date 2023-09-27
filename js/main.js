@@ -7,6 +7,7 @@ let total =document.getElementById('total');
 let count =document.getElementById('count');
 let category =document.getElementById('category');
 let submint =document.getElementById('submint');
+//spicel to update data
 let mood = 'creat';
 let tmp;
 
