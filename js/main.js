@@ -7,6 +7,8 @@ let total =document.getElementById('total');
 let count =document.getElementById('count');
 let category =document.getElementById('category');
 let submint =document.getElementById('submint');
+let mood = 'creat';
+let tmp;
 
 //get total
 
@@ -48,6 +50,7 @@ submint.onclick=function(){
         category:category.value,
     };
 //count 
+    if(mood==='creat'){
     if(newpro.count>1){
         for(let i =0 ;i<newpro.count;i++){
             datapro.push(newpro)
@@ -58,7 +61,15 @@ submint.onclick=function(){
 
 
         }
-        
+        }else{
+            datapro[tmp]=newpro;
+            count.style.display='block';
+            mood='creat';
+            submint.innerHTML='creat';
+            
+            
+
+        }
    
 
 
@@ -86,6 +97,7 @@ function cleardata(){
 //read 
 
 function showdata(){
+    gettotal()
     let table ='';
     for (let i =0 ; i< datapro.length;i++ ){
         table += `
@@ -98,7 +110,7 @@ function showdata(){
         <td>${datapro[i].discount}</td>
         <td>${datapro[i].count}</td>
         <td>${datapro[i].category}</td>
-        <td><button id="update">update</button></td>
+        <td><button onclick='updatedata(${i})' id="update">update</button></td>
         <td><button id="delete" onclick="deletedata(   ${i}   )">delete</button></td>
 
     </tr>
@@ -136,6 +148,23 @@ function alldelete(){
 //count 
 
 // update 
+function updatedata(i){
+    title.value=datapro[i].title;
+    price.value=datapro[i].price;
+    taxes.value=datapro[i].taxes;
+    ads.value=datapro[i].ads;
+    discount.value=datapro[i].discount;
+    gettotal();
+    count.style.display='none'
+    category.value =datapro[i].category;
+    submint.innerHTML='update';
+    mood='ubdate';
+    tmp=i;
+    scroll({
+                top:0,
+                behavior:'smooth'
+            })
+}
 //search 
 // clean data
  
