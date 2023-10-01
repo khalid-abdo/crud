@@ -22,6 +22,7 @@ function gettotal(){
         - +discount.value;
         total.innerHTML=result;
         total.style.background='#040';
+        price.style.border='none'
     }else{
         total.innerHTML='';
         total.style.background='#a00d02';
@@ -54,6 +55,7 @@ submint.onclick=function(){
         category:category.value.toLowerCase(),
     };
 //count 
+if(title.value!=''&&price.value!=''&&category.value!='' &&newpro.count<=100){
     if(mood==='creat'){
     if(newpro.count>1){
         for(let i = 0;i<newpro.count;i++){
@@ -74,13 +76,16 @@ submint.onclick=function(){
             
 
         }
+        cleardata()
+ }
+ else{
    
-
+ }
 
     //save lockalstorge
     
     localStorage.setItem('proudct', JSON.stringify(datapro) )
-    cleardata()
+    
     showdata()
 }
 
@@ -106,7 +111,7 @@ function showdata(){
     for (let i =0; i< datapro.length;i++ ){
         table += `
         <tr>
-        <td>${i}</td>
+        <td>${i+1}</td>
         <td>${datapro[i].title}</td>
         <td>${datapro[i].price}</td>
         <td>${datapro[i].taxes}</td>
@@ -200,7 +205,7 @@ function searchdate(value){
         if(datapro[i].title.includes(value.toLowerCase())){
             table += `
             <tr>
-            <td>${i}</td>
+            <td>${i+1}</td>
             <td>${datapro[i].title}</td>
             <td>${datapro[i].price}</td>
             <td>${datapro[i].taxes}</td>
@@ -223,7 +228,7 @@ function searchdate(value){
         if(datapro[i].category.includes(value.toLowerCase())){
             table += `
             <tr>
-            <td>${i}</td>
+            <td>${i+1}</td>
             <td>${datapro[i].title}</td>
             <td>${datapro[i].price}</td>
             <td>${datapro[i].taxes}</td>
