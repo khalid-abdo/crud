@@ -32,7 +32,6 @@ function gettotal(){
 
 //creat product
 
-
 let datapro ;
 
 if(localStorage.proudct != null){
